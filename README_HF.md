@@ -13,6 +13,8 @@ pinned: false
 
 Extract the most important sentences from any text using extractive summarization powered by word frequency scoring.
 
+🔗 **Live App:** [text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app](https://text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app/)
+
 ## Features
 - 📄 Text input or URL support
 - ⚙️ Adjustable summary length and tone

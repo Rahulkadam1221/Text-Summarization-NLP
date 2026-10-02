@@ -11,11 +11,14 @@ pinned: false
 
 # ✦ Summarize AI - Intelligent Text Summarizer
 
-[![Deploy with Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Rahulkadam1221/Text-Summarization-NLP&branch=main&mainModule=streamlit_app.py)
-[![GitHub](https://img.shields.io/badge/GitHub-Rahulkadam1221/Text--Summarization--NLP-blue?logo=github)](https://github.com/Rahulkadam1221/Text-Summarization-NLP)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Rahulkadam1221/Text--Summarization--NLP-blue?style=for-the-badge&logo=github)](https://github.com/Rahulkadam1221/Text-Summarization-NLP)
+
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40%2B-red.svg)](https://streamlit.io/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+> 🚀 **Live Application:** Access the live deployed app at **[text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app](https://text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app/)**
 
 An intelligent NLP text summarization application featuring an extractive word frequency algorithm, high-contrast accessible UI, history management, project folders, and zero-API local execution.
 
@@ -121,12 +124,9 @@ CLI options:
 
 ## 🌐 Cloud Deployment Options
 
-### Option 1: Streamlit Community Cloud (Recommended & Instant)
-1. Click the 1-click deploy badge:  
-   [![Deploy with Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Rahulkadam1221/Text-Summarization-NLP&branch=main&mainModule=streamlit_app.py)
-2. Log in with your GitHub account.
-3. Verify the pre-filled fields (`Rahulkadam1221/Text-Summarization-NLP`, `main`, `streamlit_app.py`).
-4. Click **Deploy!** — your application will be live with a free permanent HTTPS URL.
+### Option 1: Streamlit Community Cloud (Live Production)
+- 🔗 **Production App:** [text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app](https://text-summarization-nlp-eprgiuzfrpvfyjbsy5rygy.streamlit.app/)
+- **Auto-deployment:** Connected directly to the `main` branch of this repository; code updates deploy automatically in real-time.
 
 ### Option 2: Docker Container
 Run anywhere with Docker:
