@@ -1025,6 +1025,6 @@ elif page == "Help":
     st.markdown("""
     <div style="text-align:center;margin-top:20px;font-size:13px;color:#9ca3af;">
       Built with Python + Streamlit &nbsp;·&nbsp;
-      <a href="https://github.com/kdeepak2001/Ai-Text-Summarizer" target="_blank"
+      <a href="https://github.com/Rahulkadam1221/Text-Summarization-NLP" target="_blank"
          style="color:#4361ee;text-decoration:none;font-weight:600;">View on GitHub ↗</a>
     </div>""", unsafe_allow_html=True)

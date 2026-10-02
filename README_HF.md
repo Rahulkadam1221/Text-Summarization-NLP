@@ -4,7 +4,7 @@ emoji: 📝
 colorFrom: blue
 colorTo: purple
 sdk: streamlit
-sdk_version: 1.50.0
+sdk_version: 1.40.0
 app_file: streamlit_app.py
 pinned: false
 ---
@@ -15,17 +15,14 @@ Extract the most important sentences from any text using extractive summarizatio
 
 ## Features
 - 📄 Text input or URL support
-- ⚙️ Adjustable number of sentences (1-10)
-- 📊 Statistics showing text reduction percentage
-- 🚀 Works offline - no API required
-
-## How It Works
-Uses extractive summarization with word frequency scoring to identify and extract key sentences from your text.
+- ⚙️ Adjustable summary length and tone
+- 📊 Statistics showing reduction percentage, word and sentence counts
+- 📚 Built-in Library and Project manager
+- 🚀 Works offline - fast and zero external API dependencies
 
 ## Try It Now
-1. Choose input method (text or URL)
-2. Enter your content
-3. Adjust sentence count in sidebar
-4. Click "Generate Summary"
+1. Enter or paste your content, or paste an article URL
+2. Select your desired summary length and tone
+3. Click "Generate Summary"
 
-Built with Python & Streamlit | [View on GitHub](https://github.com/kdeepak2001/Ai-Text-Summarizer)
+Built with Python & Streamlit | [View on GitHub](https://github.com/Rahulkadam1221/Text-Summarization-NLP)

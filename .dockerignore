@@ -1,0 +1,7 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+app_data.json
+package-lock.json
