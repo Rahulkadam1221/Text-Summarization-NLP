@@ -21,19 +21,51 @@ An intelligent NLP text summarization application featuring an extractive word f
 
 ---
 
-## ✨ Features
+## ✨ Features & Capabilities
 
-- 📄 **Direct Text & URL Extraction** - Summarize pasted text or fetch and scrape live web articles directly.
-- 🎛️ **Length & Tone Customization** - Choose between Short, Medium, Long, or custom sentence counts, plus Casual, Professional, or Academic tones.
-- 📚 **Summary Library & Projects** - Organize your past summaries into custom project folders with local persistence.
-- 📊 **Real-time Metrics Dashboard** - Instant word count, sentence count, reading time, and percentage reduction stats.
-- 🎨 **High Contrast & Accessible UI** - Clean light main content layout with rich dark sidebar navigation and legible typography.
-- 🚀 **Zero External APIs Needed** - Works completely offline using Python NLP frequency algorithms.
-- 💻 **CLI & Web App** - Run as a modern Streamlit web dashboard or as a terminal CLI tool.
+- 📄 **Dual Input Modes** — Paste raw text or enter any web article URL for automatic HTML stripping and content extraction.
+- 🎛️ **Customizable Length & Tone**:
+  - **Length Presets:** Short (2-3 sentences), Medium (4-5 sentences), Long (6-8 sentences), or custom sentence counts.
+  - **Tone Adaptation:** Casual (concise & easy), Professional (balanced & objective), Academic (comprehensive & formal).
+- 📊 **Real-time Analytics Dashboard** — Instant metrics showing original words, summary words, sentence counts, estimated reading time saved, and reduction percentage (typically 80–95%).
+- 📚 **Summary Library** — Automatically save summaries with timestamp, length, tone, metrics, and full-text copy capabilities.
+- 📁 **Project Workspace** — Organize summaries into dedicated project folders for research, study, or work topics.
+- ⚙️ **User Preferences** — Set your custom username, default summary length, and preferred default tone.
+- 🎨 **Modern High-Contrast UI** — Sleek dark navigation sidebar paired with a clean, high-contrast content area designed for readability.
+- 🚀 **100% Offline & Private** — Runs entirely locally with zero external API dependencies or token costs. All data stays on your machine.
+- 💻 **Dual Interface** — Interactive web application powered by Streamlit and a fast command-line CLI tool.
 
 ---
 
-## 🚀 Quick Start (Local)
+## 🧠 How It Works (Extractive Summarization)
+
+```
+[Raw Text / Web URL]
+        │
+        ▼
+ 1. Text Extraction & Cleaning (BeautifulSoup / Regex)
+        │
+        ▼
+ 2. Sentence & Word Tokenization
+        │
+        ▼
+ 3. Stopword Removal & Word Frequency Calculation
+        │
+        ▼
+ 4. Sentence Scoring (Word Weights + Positional Bias)
+        │
+        ▼
+ 5. Length & Tone Filtering (Top-N Sentence Extraction)
+        │
+        ▼
+ [Concise, Hallucination-Free Summary]
+```
+
+Unlike generative AI models that can hallucinate or alter facts, **extractive summarization** identifies and extracts the most significant verbatim sentences from the source text based on normalized word importance weights and sentence position scoring.
+
+---
+
+## 🚀 Quick Start (Local Setup)
 
 ### 1. Clone the repository
 ```bash
@@ -57,60 +89,65 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Run the Streamlit Web Application
+### 4. Run the Web Application
 ```bash
 streamlit run streamlit_app.py
 ```
-Then visit `http://localhost:8501` in your browser.
+Open your browser and navigate to `http://localhost:8501`.
 
 ---
 
-## 💻 CLI Usage
+## 💻 Command-Line Interface (CLI)
 
-Summarize text directly from the command line:
+The project includes `app.py` for terminal-based summarization:
 
 ```bash
-# From direct pipe
-echo "Your article text here..." | python app.py
+# From direct piped input
+echo "Natural Language Processing is a field of AI..." | python app.py
 
-# From a file
-python app.py --file document.txt --num-sentences 4
+# From a text file
+python app.py --file article.txt --num-sentences 4
 
-# From a URL
+# From any article URL
 python app.py --url https://en.wikipedia.org/wiki/Natural_language_processing --num-sentences 3
 ```
+
+CLI options:
+- `-f, --file` — Path to input text file
+- `-u, --url` — URL to fetch and summarize
+- `-n, --num-sentences` — Number of sentences to extract (default: 3)
 
 ---
 
 ## 🌐 Cloud Deployment Options
 
 ### Option 1: Streamlit Community Cloud (Recommended & Instant)
-1. Click the button below:  
+1. Click the 1-click deploy badge:  
    [![Deploy with Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=Rahulkadam1221/Text-Summarization-NLP&branch=main&mainModule=streamlit_app.py)
-2. Sign in with GitHub.
-3. Confirm repository `Rahulkadam1221/Text-Summarization-NLP`, branch `main`, and main file path `streamlit_app.py`.
-4. Click **Deploy!**. Your application will be live in 1–2 minutes with a free HTTPS URL.
+2. Log in with your GitHub account.
+3. Verify the pre-filled fields (`Rahulkadam1221/Text-Summarization-NLP`, `main`, `streamlit_app.py`).
+4. Click **Deploy!** — your application will be live with a free permanent HTTPS URL.
 
 ### Option 2: Docker Container
-Run the containerized application anywhere:
+Run anywhere with Docker:
 ```bash
-# Build the Docker image
-docker build -t summarize-ai .
+# Build Docker image
+docker build -t text-summarizer-nlp .
 
-# Run the container
-docker run -p 8501:8501 summarize-ai
+# Run container on port 8501
+docker run -p 8501:8501 text-summarizer-nlp
 ```
-Then open `http://localhost:8501`.
+Then visit `http://localhost:8501`.
 
 ### Option 3: Render / Railway / Heroku
-The included [`Procfile`](Procfile) and [`Dockerfile`](Dockerfile) are pre-configured:
-- Build command: `pip install -r requirements.txt`
-- Start command: `streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0`
+The repository contains both [`Procfile`](Procfile) and [`Dockerfile`](Dockerfile) for zero-config PaaS deployment:
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0`
 
 ### Option 4: Hugging Face Spaces
-1. Create a new Space on [Hugging Face Spaces](https://huggingface.co/spaces).
-2. Choose **Streamlit** SDK.
-3. Link your GitHub repository `Rahulkadam1221/Text-Summarization-NLP` or push to the Space's Git remote.
+1. Go to [Hugging Face Spaces](https://huggingface.co/spaces) and create a new Space.
+2. Select the **Streamlit** SDK.
+3. Connect your GitHub repository `Rahulkadam1221/Text-Summarization-NLP`.
 
 ---
 
@@ -119,15 +156,24 @@ The included [`Procfile`](Procfile) and [`Dockerfile`](Dockerfile) are pre-confi
 ```
 ├── .streamlit/
 │   └── config.toml        # Streamlit production configurations
-├── app.py                 # Extractive NLP algorithm & CLI tool
+├── app.py                 # Core extractive algorithm & CLI application
 ├── streamlit_app.py       # Full-featured Streamlit Web Dashboard
-├── Dockerfile             # Production Docker container configuration
-├── Procfile               # PaaS deployment specification (Render/Railway)
-├── requirements.txt       # Python dependencies
+├── Dockerfile             # Production container setup (Python 3.11-slim)
+├── Procfile               # PaaS deployment specification
+├── requirements.txt       # Production dependencies
 ├── .dockerignore          # Docker build exclusion rules
 ├── .gitignore             # Git exclusion rules
+├── LICENSE                # MIT License
 └── README.md              # Project documentation
 ```
+
+---
+
+## 👨‍💻 Author
+
+**Rahul Kadam**
+- GitHub: [@Rahulkadam1221](https://github.com/Rahulkadam1221)
+- Repository: [Text-Summarization-NLP](https://github.com/Rahulkadam1221/Text-Summarization-NLP)
 
 ---
 
